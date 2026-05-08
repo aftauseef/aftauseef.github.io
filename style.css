@@ -1,0 +1,222 @@
+/* Import a clean font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* --- THE SINGLE BACKGROUND FIX --- */
+body {
+    /* Edit your single photo URL here */
+    background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80');
+    background-attachment: fixed; /* This keeps the photo still */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Top Header Styles */
+.top-header {
+    text-align: center;
+    padding: 40px 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+}
+
+.arabic-text {
+    font-size: 32px; /* Increased size */
+    color: #000;
+    font-weight: bold;
+}
+
+/* Parallax Window now acts as a transparent spacer */
+.parallax-window {
+    position: relative;
+    min-height: 80vh; /* Takes up screen space to show the background */
+    background: transparent !important; /* Forces background to be invisible here */
+}
+
+/* Centering the Text Over the Background */
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+/* The Border Box Style */
+.border {
+    background-color: rgba(17, 17, 17, 0.85); /* Slightly see-through */
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 25px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* Your Name - Forced Large */
+.main-title {
+    font-size: 64px !important; /* Increased for impact */
+    display: inline-block;
+}
+
+/* Content Section Styles */
+.content-section {
+    padding: 100px 20px;
+    text-align: center;
+    /* This makes the white boxes "float" over the photo */
+    background-color: rgba(255, 255, 255, 0.9); 
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.content-section h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #111;
+    font-size: 28px;
+}
+
+.content-section p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/* Dark Section variant */
+
+
+h3 {
+    color: #fff;
+}
+
+.button-container {
+    margin-top: 30px; /* Space between name and buttons */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the two buttons */
+}
+
+
+
+/* Optional: style the email specifically to be slightly smaller or different */
+.email-text {
+    font-size: 18px; 
+    letter-spacing: 2px;
+    text-transform: none; /* Keeps the email lowercase */
+    display: block;      /* Ensures it sits on its own line */
+    margin-top: 10px;
+}
+
+/* Base Button Style */
+.btn {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 14px 34px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.2); /* Slight dark tint */
+    backdrop-filter: blur(5px);      /* Glassmorphism effect */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px; /* Slight roundness for a modern look */
+}
+
+/* Hover Effect: Background fills up and button lifts */
+.btn:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-5px); /* Button moves up slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Active/Click Effect */
+.btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styling for the buttons container to ensure alignment */
+.button-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* --- Mobile Responsiveness --- */
+
+@media only screen and (max-device-width: 1366px) {
+    body {
+        background-attachment: scroll; /* Better performance on old phones */
+    }
+    .parallax-window {
+        min-height: 60vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-title {
+        font-size: 36px !important; /* Responsive scaling */
+    }
+    
+    .border {
+        font-size: 18px;
+        letter-spacing: 4px;
+        padding: 15px;
+        width: 90%;
+    }
+    
+    .arabic-text {
+        font-size: 24px;
+    }
+
+    .content-section {
+        width: 95%;
+        padding: 50px 15px;
+    }
+}
+
+/* Container for the buttons */
+.button-container {
+    margin-top: 30px; /* Space between name and buttons */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the two buttons */
+}
+
+/* Mobile Fix: Stack buttons vertically if the screen is too narrow */
+@media screen and (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 80%; /* Make buttons wider on mobile for easier tapping */
+        font-size: 16px;
+    }
+}
